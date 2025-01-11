@@ -69,7 +69,7 @@ export default function Home() {
         <p className="pt-4 flex items-center gap-1">
           - Dinesh Vasireddy
           <a
-            href="https://twitter.com/dineshvasireddy"
+            href="https://twitter.com/dineshtva"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-8 h-8 bg-transparent rounded-md hover:bg-foreground/10 transition-colors"
@@ -77,7 +77,7 @@ export default function Home() {
             <FaXTwitter className="w-4 h-4" />
           </a>
           <a
-            href="https://www.linkedin.com/in/dineshvasireddy/"
+            href="https://www.linkedin.com/in/dinesh-vasireddy/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-8 h-8 bg-transparent rounded-md hover:bg-foreground/10 transition-colors"
