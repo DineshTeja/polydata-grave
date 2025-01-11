@@ -1,101 +1,110 @@
-import Image from "next/image";
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const partners = [
+    {
+      name: "Joshua Price",
+      logo: "/images/joshprice.png"
+    },
+    {
+      name: "Democrats of AR",
+      logo: "/images/arkdems.jpg"
+    },
+    {
+      name: "Arkansas United",
+      logo: "/images/aulogo.png"
+    },
+    {
+      name: "Jesse Gibson",
+      logo: "/images/jessegibson.png"
+    }
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+  const scrollingPartners = [...partners, ...partners];
+
+  return (
+    <div className="max-w-3xl mx-auto px-8 sm:px-16 md:px-24 lg:px-32">
+      <main className="py-8 text-left">
+        <p>
+          This is PolyData&apos;s grave.
+        </p>
+        <p className="pt-4">
+          We built a small company that made a real impact.
+        </p>
+        <p className="pt-4">
+          From 2022-2024, PolyData Electoral Innovation Network pioneered AI-enhanced
+          election analysis tools through partnerships with campaigns, activists, and
+          government organizations.
+        </p>
+        <p className="pt-4">
+          We served partners across Arkansas including Joshua Price for AR Secretary
+          of State, Democrats of Arkansas, Arkansas United Community Coalition, and more, fulfilling six figures worth of contracts over two years.
+        </p>
+        <p className="pt-4">
+          Our mission was to understand the electorate and help others understand
+          the world. We truly believe that our work contributed to a more engaged democracy
+          by introducing advancements to many local campaign systems.
+        </p>
+        <p className="pt-4">
+          We built various{' '}
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="/polydatainfo.pdf"
+            target="_blank"
+            className="inline-flex items-center px-1.5 py-0.5 bg-secondary/60 hover:bg-secondary/80 rounded-md text-foreground transition-colors"
+          >
+            products and services <ArrowUpRight className="w-3 h-3 mb-1" />
+          </a>
+          {' '}including Arkansas&apos; largest immigrant resources portal,
+          an inactive voter identification system, election simulation models, and back-office automation tools.
+        </p>
+        <p className="pt-4">
+          We ultimately closed our doors in 2024 because it was a model that was too small to fit the shoes it was trying to fill. We see a world where
+          technology becomes a driving force in political operations, rather than just a slight advantage, and this company just wasn&apos;t ready to scale into a moonshot that could do that.
+        </p>
+        <p className="pt-4">
+          From the ashes, we plan to build something new that will leverage and architect political technology from the ground up.
+        </p>
+        <p className="pt-4 flex items-center gap-1">
+          - Dinesh Vasireddy
+          <a
+            href="https://twitter.com/dineshvasireddy"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-8 h-8 bg-transparent rounded-md hover:bg-foreground/10 transition-colors"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            <FaXTwitter className="w-4 h-4" />
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/dineshvasireddy/"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-8 h-8 bg-transparent rounded-md hover:bg-foreground/10 transition-colors"
           >
-            Read our docs
+            <FaLinkedin className="w-4 h-4" />
           </a>
+        </p>
+
+        {/* Partners section */}
+        <div className="py-8 w-[470px] mx-auto overflow-hidden">
+          <div className="animate-scroll flex gap-6">
+            {scrollingPartners.map((partner, index) => (
+              <div
+                key={`${partner.name}-${index}`}
+                className="flex-shrink-0 w-[120px] h-20 relative overflow-hidden rounded-xl"
+              >
+                <Image
+                  src={partner.logo}
+                  alt={`${partner.name} logo`}
+                  fill
+                  className="object-contain opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
