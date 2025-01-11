@@ -34,7 +34,7 @@ export default function Home() {
           We built a small company that made a real impact.
         </p>
         <p className="pt-4">
-          From 2022-2024, PolyData Electoral Innovation Network pioneered AI-enhanced
+          From 2021-2023, PolyData Electoral Innovation Network pioneered AI-enhanced
           election analysis tools through partnerships with campaigns, activists, and
           government organizations.
         </p>
